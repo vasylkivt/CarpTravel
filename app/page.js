@@ -1,14 +1,10 @@
-import { Contacts, Gallery, Hero, Section } from "../components";
 import backgroundHero from "public/assets/background/hero.jpeg";
-// import backgroundAbout from "/public/images/background/about.jpeg";
-// import backgroundCareer from "/public/images/background/career.jpeg";
-import backgroundGallery from "public/assets/background/gallery.jpeg";
-import backgroundContacts from "public/assets/background/contacts.jpeg";
+
+import Section from "@/components/Section";
+import Hero from "@/components/Hero";
 
 const background = {
   hero: backgroundHero,
-  gallery: backgroundGallery,
-  contacts: backgroundContacts,
 };
 
 export default function Home() {
@@ -21,14 +17,6 @@ export default function Home() {
         >
           <Hero />
         </Section>
-        {/* 
-        <Section elementName="gallery" bgImage={background.gallery}>
-          <Gallery />
-        </Section>
-
-        <Section elementName="contacts" bgImage={background.contacts}>
-          <Contacts />
-        </Section> */}
       </main>
     </>
   );
