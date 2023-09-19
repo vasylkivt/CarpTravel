@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #fff;
+  font-family: Inter;
+}
+
+a {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.custom-underline {
+  @apply block;
+}
+.custom-underline::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 0;
+  border-bottom-width: 1.5px;
+  opacity: 0.5;
+  transition: all 250ms ease-in-out;
+}
+.custom-underline:hover::before {
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.position-center {
+  @apply left-1/2 top-1/2  -translate-x-2/4 -translate-y-2/4;
+}
+
+.title-section {
+  @apply text-[40px]
+  uppercase leading-[1.4] tracking-[-1.6px]  
+
+  tablet:text-[67px] tablet:leading-[normal] tablet:tracking-[-2.68px]
+
+  desktop:text-[96px] desktop:tracking-[-3.92px];
+}
