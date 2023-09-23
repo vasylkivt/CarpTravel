@@ -1,6 +1,7 @@
 import navigation from "./navigation";
 import hero from "./section/hero";
 
-export * from "./header";
+export * from "./mobileMenuButton";
+export * from "./breakpoints";
 
 export { navigation, hero };

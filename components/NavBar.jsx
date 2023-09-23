@@ -1,146 +1,64 @@
 "use client";
 
-import { mobileMenuButtonName, navigation } from "@/data";
-import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { mobileMenuButton as menuButton } from "@/data";
+import { useState } from "react";
+
+import NavList from "./NavList";
 
 function NavBar() {
-  const { show, hidden } = mobileMenuButtonName;
-  const [screen, setScreen] = useState(window.innerWidth);
-  const [btnName, setBtnName] = useState(show);
-
-  const handleResize = () => {
-    setScreen(window.innerWidth);
-  };
-
-  useEffect(() => {
-    setScreen(window.innerWidth);
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { isShow, isHidden } = menuButton;
+  const [isOpen, setIsOpen] = useState(false);
+  const [mobileMenuButton, setMobileMenuButton] = useState(isHidden);
 
   const toggleMenu = () => {
-    setBtnName((prev) => (prev === hidden ? show : hidden));
-    document.body.style.overflow = btnName === show ? "hidden" : "";
+    setIsOpen((prev) => !prev);
+
+    setMobileMenuButton((prev) => (prev === isShow ? isHidden : isShow));
+    document.body.style.overflow = !isOpen ? "hidden" : "";
+  };
+
+  const handleBtnMenuClick = () => {
+    setIsOpen((prev) => !prev);
   };
 
   return (
     <>
       <button
         onClick={toggleMenu}
-        className="custom-underline 
-        absolute right-[26px] top-[10px] z-30 
-        block  text-[14px] tracking-[1.4px] 
+        className="custom-underline
+        absolute right-[26px] top-[10px] z-10
+        block
+        text-[14px] tracking-[1.4px]
         tablet:hidden"
       >
-        {btnName}
+        {mobileMenuButton}
       </button>
 
-      <nav className="flex items-center justify-between">
-        <ul
-          className="flex flex-col items-center justify-center gap-14
-                    tablet:flex-row"
-        >
-          {navigation.map((link) => (
-            <li key={link.href}>
-              <Link
-                className="custom-underline relative
-
-              text-[18px] tracking-[1.8px]
-
-              tablet:text-[14px] tablet:tracking-[1.4px]"
-                to={link.href}
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div
+        className={` ${
+          isOpen
+            ? "translate-x-0  duration-150"
+            : "-translate-x-full delay-200 duration-150 tablet:translate-x-0"
+        } 
+            fixed left-0 top-0  h-screen
+            w-screen  bg-black/75 backdrop-blur-xl 
+    
+            tablet:hidden`}
+      ></div>
+      <nav
+        className={`${
+          isOpen
+            ? "visible opacity-100 delay-200 duration-200"
+            : "invisible  opacity-0 duration-200 tablet:visible tablet:opacity-100"
+        }
+            fixed left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-14
+            
+            tablet:static tablet:-translate-x-0 tablet:-translate-y-0 tablet:flex-row `}
+      >
+        <NavList onClick={handleBtnMenuClick} />
       </nav>
     </>
   );
 }
 
 export default NavBar;
-// function NavBar() {
-
-//   const { show, hidden } = mobileMenuButtonName;
-//   const [isOpen, setIsOpen] = useState(false);
-//   const [btnName, setBtnName] = useState(show);
-
-//   const handleNavClick = () => {
-//     setIsOpen(!isOpen);
-//   };
-
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen);
-
-//     setBtnName((prev) => (prev === hidden ? show : hidden));
-//     document.body.style.overflow = !isOpen ? "hidden" : "";
-//   };
-
-//   return (
-//     <>
-//       <button
-//         onClick={toggleMenu}
-//         className="custom-underline
-//         absolute right-[26px] top-[10px] z-30
-//         block
-//         text-[14px] tracking-[1.4px]
-//         tablet:hidden"
-//       >
-//         {btnName}
-//       </button>
-
-//       <div
-//         className={
-//           "fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-black/75 backdrop-blur-xl transition-all duration-250" +
-//           " " +
-//           "tablet:static tablet:h-auto tablet:w-auto tablet:bg-transparent tablet:backdrop-blur-0" +
-//           " " +
-//           (isOpen
-//             ? "visible opacity-100 "
-//             : "invisible opacity-0 tablet:visible tablet:opacity-100")
-//         }
-//       >
-//         <nav className="flex items-center justify-between">
-//           <ul
-//             className="
-
-//       flex
-//       flex-col items-center justify-center gap-14
-// tablet:flex-row"
-//           >
-//             {navigation.map((link) => (
-//               <li key={link.href}>
-//                 <Link
-//                   onClick={toggleMenu}
-//                   className="custom-underline relative
-
-//               text-[18px] tracking-[1.8px]
-
-//               tablet:text-[14px] tablet:tracking-[1.4px]"
-//                   to={link.href}
-//                   spy={true}
-//                   smooth={true}
-//                   duration={500}
-//                 >
-//                   {link.name}
-//                 </Link>
-//               </li>
-//             ))}
-//           </ul>
-//         </nav>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default NavBar;
