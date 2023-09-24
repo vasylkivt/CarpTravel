@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "linear-gradient-main":
+        "overlay-gradient-section":
           "linear-gradient(180deg, #001826 0%, rgba(0, 37, 49, 0.00) 100%)",
       },
       transitionDuration: {

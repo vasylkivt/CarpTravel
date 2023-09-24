@@ -40,7 +40,7 @@ function NavBar() {
             ? "translate-x-0  duration-150"
             : "-translate-x-full delay-200 duration-150 tablet:translate-x-0"
         } 
-            fixed left-0 top-0  h-screen
+            fixed left-0 top-0   h-screen
             w-screen  bg-black/75 backdrop-blur-xl 
     
             tablet:hidden`}

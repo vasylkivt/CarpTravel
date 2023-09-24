@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logo from "/public/images/logo.png";
-import NavBar from "./NavBar";
+import NavBar from "./components/NavBar";
 
 function Header() {
   return (
