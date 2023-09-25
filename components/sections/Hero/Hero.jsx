@@ -1,6 +1,7 @@
 import { hero } from "@/data";
 
 import "./Hero.scss";
+import Button from "@/components/ButtonHero/Button";
 
 const Hero = () => {
   const { mainTitle, location, subTitle, description, btnText } = hero;
@@ -63,10 +64,8 @@ const Hero = () => {
           >
             {description}
           </p>
-          <div className=" tablet:ml-auto">
-            <button>{btnText}</button>
-            {/* <Button btnName={btnText} /> */}
-          </div>
+
+          <Button btnName={btnText} />
         </div>
       </div>
     </section>
