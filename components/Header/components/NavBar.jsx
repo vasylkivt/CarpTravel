@@ -23,17 +23,6 @@ function NavBar() {
 
   return (
     <>
-      <button
-        onClick={toggleMenu}
-        className="custom-underline
-        absolute right-[26px] top-[10px] z-10
-        block
-        text-[14px] tracking-[1.4px]
-        tablet:hidden"
-      >
-        {mobileMenuButton}
-      </button>
-
       <div
         className={` ${
           isOpen
@@ -57,6 +46,16 @@ function NavBar() {
       >
         <NavList onClick={handleBtnMenuClick} />
       </nav>
+      <button
+        onClick={toggleMenu}
+        className="custom-underline
+        absolute right-[26px] top-[10px]
+        block
+        text-[14px] tracking-[1.4px]
+        tablet:hidden"
+      >
+        {mobileMenuButton}
+      </button>
     </>
   );
 }

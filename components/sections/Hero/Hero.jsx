@@ -8,6 +8,8 @@ const Hero = () => {
 
   return (
     <section className="hero relative pb-[56px] pt-[104px]">
+      <div className="hero-background-gradient-top"></div>
+      <div className="hero-background-gradient-bottom"></div>
       <div className="container relative flex flex-col justify-between gap-[24px] tablet:flex-row tablet:gap-0">
         <div className="flex flex-col gap-[24px] pt-[86px] tablet:gap-[56px] tablet:pt-0 desktop:gap-[148px]">
           <h1
