@@ -12,7 +12,7 @@ const Contacts = () => {
   } = useForm();
 
   return (
-    <section className="contacts h-[856px] pb-[56px] pt-[56px] tablet:h-[691px] desktop:h-[762px]">
+    <section className="contacts pb-[56px] pt-[56px]">
       <div className="contacts-background-gradient-top"></div>
       <div className="contacts-background-gradient-bottom"></div>
       <div className="container relative">
@@ -22,22 +22,34 @@ const Contacts = () => {
         </h2>
 
         <div className="desktop:flex desktop:justify-between">
-          <div className="mb-[12px] flex flex-col items-end tablet:mb-[64px] tablet:flex-row  tablet:items-start  tablet:gap-[90px] tablet:pl-[34px] desktop:flex-col desktop:items-end desktop:pl-[107px]">
-            <ul className="mb-[24px]  flex flex-col items-end gap-[24px]   desktop:gap-[64px]">
+          <div
+            className="mb-[12px]
+          
+          tablet:mb-[64px] tablet:flex  tablet:flex-row tablet:gap-[90px] tablet:pl-[34px]
+          
+          desktop:flex-col desktop:items-end desktop:gap-[124px] desktop:pl-[107px] "
+          >
+            <ul
+              className="mb-[24px] flex flex-col items-end gap-[24px]
+            
+            desktop:gap-[64px]"
+            >
               {contacts.sections.map(({ title, content }) => (
-                <li className=" flex items-baseline gap-[20px] " key={title}>
-                  <ul>
+                <li className=" flex items-baseline  gap-[20px] " key={title}>
+                  <div>
                     {content.map(({ label, href }) => (
-                      <li className="" key={href}>
+                      <div className="" key={href}>
                         <a
-                          className="text-[14px] font-normal leading-[1.71] desktop:text-[18px] desktop:leading-[1.33]"
+                          className="text-[14px] font-normal leading-[1.71] 
+                          
+                          desktop:text-[18px] desktop:leading-[1.33]"
                           href={href}
                         >
                           {label}
                         </a>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                   <h3 className="min-w-[81px] text-[12px] font-extralight leading-[1.67] desktop:leading-[2]">
                     {title}
                   </h3>
@@ -45,15 +57,29 @@ const Contacts = () => {
               ))}
             </ul>
 
-            <div className=" flex items-baseline gap-[24px] desktop:flex-row-reverse">
-              <h3 className="text-[12px] font-extralight leading-[1.67] desktop:min-w-[81px] desktop:leading-[2] ">
+            <div
+              className=" flex items-baseline justify-end gap-[24px] 
+            
+            desktop:flex-row-reverse"
+            >
+              <h3
+                className="text-[12px] font-extralight leading-[1.67] 
+              
+              desktop:min-w-[81px] desktop:leading-[2] "
+              >
                 {contacts.socialMedia.title}
               </h3>
-              <div className="min-w-[81px] desktop:text-right">
+              <div
+                className="min-w-[81px] 
+              
+              desktop:text-right"
+              >
                 {contacts.socialMedia.content.map(({ label, href }) => (
                   <div key={href}>
                     <a
-                      className="text-[14px] font-normal leading-[1.71]   desktop:text-[18px] desktop:leading-[1.33]"
+                      className="text-[14px] font-normal leading-[1.71]   
+                      
+                      desktop:text-[18px] desktop:leading-[1.33]"
                       href={href}
                     >
                       {label}
@@ -63,12 +89,14 @@ const Contacts = () => {
               </div>
             </div>
           </div>
-          <button
-            className=" text-[30px] font-medium desktop:text-[32px]"
-            type="submit"
-          >
-            {contacts.form.btnText}
-          </button>
+          <form>
+            <button
+              className=" text-[30px] font-medium desktop:text-[32px]"
+              type="submit"
+            >
+              {contacts.form.btnText}
+            </button>
+          </form>
         </div>
 
         {/* <form onSubmit={handleSubmit((data) => console.log(data))}>
