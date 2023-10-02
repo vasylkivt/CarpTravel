@@ -1,16 +1,8 @@
-"use client";
 import contacts from "@/data/section/contacts";
 import "./Contacts.scss";
-
-import { useForm } from "react-hook-form";
+import Form from "./components/Form";
 
 const Contacts = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
   return (
     <section className="contacts pb-[56px] pt-[56px]">
       <div className="contacts-background-gradient-top"></div>
@@ -89,29 +81,12 @@ const Contacts = () => {
               </div>
             </div>
           </div>
-          <form>
-            <button
-              className=" text-[30px] font-medium desktop:text-[32px]"
-              type="submit"
-            >
-              {contacts.form.btnText}
-            </button>
-          </form>
         </div>
 
-        {/* <form onSubmit={handleSubmit((data) => console.log(data))}>
-          <input {...register("firstName")} />
-          <input {...register("lastName", { required: true })} />
-          {errors.lastName && <p>Last name is required.</p>}
-          <input {...register("age", { pattern: /\d+/ })} />
-          {errors.age && <p>Please enter number for age.</p>}
-          <input type="submit" />
-        </form> */}
+        <Form />
       </div>
     </section>
   );
 };
 
 export default Contacts;
-
-//Забезпечте валідацію форми з використанням react-hook-form та Tailwind CSS для стилізації помилок валідації
