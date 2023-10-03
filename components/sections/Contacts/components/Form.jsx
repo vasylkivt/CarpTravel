@@ -1,5 +1,7 @@
 "use client";
 
+import "./Form.css";
+
 import contacts from "@/data/section/contacts";
 import { useForm } from "react-hook-form";
 
@@ -12,39 +14,43 @@ const Form = () => {
 
   return (
     <>
-      <form className=" flex flex-col">
-        <label className="flex flex-col gap-[4px]">
-          <span className="text-[12px] font-extralight leading-[2] tracking-[2.4px]">
-            {contacts.form.name.label}
-          </span>
-          <input
-            className="mb-[25px] bg-white/5 pl-[8px] text-[13px] font-extralight leading-[1.85] outline-none  placeholder:opacity-20"
-            placeholder={contacts.form.name.placeholder}
-            type="text"
-          />
-        </label>
-        <label className="flex flex-col gap-[4px]">
-          <span className="text-[12px] font-extralight leading-[2] tracking-[2.4px]">
-            {contacts.form.email.label}
-          </span>
-          <input
-            className="text-[13px]leading-[1.85] mb-[24px] bg-white/5 pl-[8px] font-extralight outline-none  placeholder:opacity-20"
-            placeholder={contacts.form.email.placeholder}
-            type="email"
-          />
-        </label>
-        <label className="flex flex-col gap-[4px]">
-          <span className="text-[12px] font-extralight leading-[2] tracking-[2.4px]">
-            {contacts.form.textarea.label}
-          </span>
-          <textarea className="mb-[16px] h-[193px] bg-white/5 pl-[8px] text-[13px] font-extralight  leading-[1.85] outline-none"></textarea>
-        </label>
-        <button
-          className=" text-right text-[30px] font-medium desktop:text-[32px]"
-          type="submit"
-        >
-          {contacts.form.btnText}
-        </button>
+      <form className=" flex flex-col gap-[20px] tablet:flex-row tablet:justify-between desktop:w-[630px] desktop:flex-col  desktop:justify-normal desktop:gap-[40px]">
+        <div className="tablet:w-[221px] desktop:flex desktop:w-full desktop:gap-[20px]">
+          <label className="flex flex-col gap-[4px] desktop:w-full">
+            <span className="label-contact-form">
+              {contacts.form.name.label}
+            </span>
+            <input
+              className="input-contact-form mb-[25px]  placeholder:opacity-20"
+              placeholder={contacts.form.name.placeholder}
+              type="text"
+            />
+          </label>
+          <label className="flex flex-col gap-[4px] desktop:w-full">
+            <span className="label-contact-form">
+              {contacts.form.email.label}
+            </span>
+            <input
+              className="input-contact-form mb-[24px]  placeholder:opacity-20"
+              placeholder={contacts.form.email.placeholder}
+              type="email"
+            />
+          </label>
+        </div>
+        <div className="tablet:w-full">
+          <label className="flex flex-col gap-[4px]">
+            <span className="label-contact-form">
+              {contacts.form.textarea.label}
+            </span>
+            <textarea className="input-contact-form mb-[16px] h-[193px] tablet:h-[221px] desktop:h-[174px]"></textarea>
+          </label>
+          <button
+            className="text-right text-[30px] font-medium tablet:ml-auto tablet:block desktop:text-[32px]"
+            type="submit"
+          >
+            {contacts.form.btnText}
+          </button>
+        </div>
       </form>
       {/* <form onSubmit={handleSubmit((data) => console.log(data))}>
           <input {...register("firstName")} />

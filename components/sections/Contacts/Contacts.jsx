@@ -7,7 +7,7 @@ const Contacts = () => {
     <section className="contacts pb-[56px] pt-[56px]">
       <div className="contacts-background-gradient-top"></div>
       <div className="contacts-background-gradient-bottom"></div>
-      <div className="container relative">
+      <div className="container relative ">
         <h2 className="title-section mb-[36px] desktop:mb-[74px]">
           <span className="font-thin">{contacts.mainTitle.first}</span>{" "}
           <span className="font-medium">{contacts.mainTitle.second}</span>
@@ -81,9 +81,8 @@ const Contacts = () => {
               </div>
             </div>
           </div>
+          <Form />
         </div>
-
-        <Form />
       </div>
     </section>
   );

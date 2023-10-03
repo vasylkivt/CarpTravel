@@ -1,0 +1,7 @@
+.label-contact-form {
+  @apply text-[12px] font-extralight leading-[2] tracking-[2.4px];
+}
+
+.input-contact-form {
+  @apply bg-white/5 pl-[8px] text-[13px] font-extralight leading-[1.85] outline-none  placeholder:opacity-20;
+}
