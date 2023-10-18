@@ -10,10 +10,11 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:next/recommended',
+    'plugin:@next/next/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:prettier/recommended',
+    'plugin:react-hooks/recommended',
   ],
   overrides: [
     {
@@ -36,8 +37,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'next'],
+  plugins: ['react', 'next', 'react-hooks'],
   rules: {
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'prefer-const': 'warn',
     'no-var': 'error',
     'react/react-in-jsx-scope': 'off',
