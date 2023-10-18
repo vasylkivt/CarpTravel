@@ -10,6 +10,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:next/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:prettier/recommended',
@@ -35,7 +36,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'next'],
   rules: {
     'prefer-const': 'warn',
     'no-var': 'error',
