@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import "./Button.scss";
+import './Button.scss';
 
 const Button = ({ btnName }) => {
   return (

@@ -1,19 +1,15 @@
-let locales = ["en", "uk"];
+import createMiddleware from 'next-intl/middleware';
 
-export function middleware(request) {
-  const { pathname } = request.nextUrl;
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales: ['en', 'uk'],
 
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-  );
-
-  if (pathnameHasLocale) return;
-
-  request.nextUrl.pathname = `/en`;
-
-  return Response.redirect(request.nextUrl);
-}
+  // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
+  defaultLocale: 'uk',
+});
 
 export const config = {
-  matcher: ["/((?!_next).*)"],
+  // Skip all paths that should not be internationalized. This example skips
+  // certain folders and all pathnames with a dot (e.g. favicon.ico)
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };

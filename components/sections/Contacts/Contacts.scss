@@ -4,8 +4,8 @@
   background-size: cover;
   background-image: linear-gradient(rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)),
     image-set(
-      url("/images/background/contacts/mob@1x.webp") 1x,
-      url("/images/background/contacts/mob@2x.webp") 2x
+      url('/images/background/contacts/mob@1x.webp') 1x,
+      url('/images/background/contacts/mob@2x.webp') 2x
     );
 
   @media screen and (min-width: 768px) {
@@ -14,8 +14,8 @@
         rgba(2, 15, 8, 0.75)
       ),
       image-set(
-        url("/images/background/contacts/tab@1x.webp") 1x,
-        url("/images/background/contacts/tab@2x.webp") 2x
+        url('/images/background/contacts/tab@1x.webp') 1x,
+        url('/images/background/contacts/tab@2x.webp') 2x
       );
   }
 
@@ -25,8 +25,8 @@
         rgba(2, 15, 8, 0.75)
       ),
       image-set(
-        url("/images/background/contacts/desk@1x.webp") 1x,
-        url("/images/background/contacts/desk@2x.webp") 2x
+        url('/images/background/contacts/desk@1x.webp') 1x,
+        url('/images/background/contacts/desk@2x.webp') 2x
       );
   }
 }

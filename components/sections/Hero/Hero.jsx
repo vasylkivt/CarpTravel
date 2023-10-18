@@ -1,7 +1,7 @@
-import { hero } from "@/data";
+import { hero } from '@/data';
 
-import "./Hero.scss";
-import Button from "@/components/ButtonHero/Button";
+import './Hero.scss';
+import Button from '@/components/ButtonHero/Button';
 
 const Hero = () => {
   const { mainTitle, location, subTitle, description, btnText } = hero;
@@ -17,7 +17,7 @@ const Hero = () => {
             tablet:w-auto
           "
           >
-            <span className="font-medium">{mainTitle.first}</span>{" "}
+            <span className="font-medium">{mainTitle.first}</span>{' '}
             {mainTitle.second}
           </h1>
           <p

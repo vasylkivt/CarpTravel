@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { navigation } from "@/data";
-import { Link } from "react-scroll";
+import { navigation } from '@/data';
+import { Link } from 'react-scroll';
 
 const NavList = ({ onClick }) => {
   return (

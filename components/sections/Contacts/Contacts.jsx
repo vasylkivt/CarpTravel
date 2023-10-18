@@ -1,6 +1,6 @@
-import contacts from "@/data/section/contacts";
-import "./Contacts.scss";
-import Form from "./components/Form";
+import contacts from '@/data/section/contacts';
+import './Contacts.scss';
+import Form from './components/Form';
 
 const Contacts = () => {
   return (
@@ -9,7 +9,7 @@ const Contacts = () => {
       <div className="contacts-background-gradient-bottom"></div>
       <div className="container relative ">
         <h2 className="title-section mb-[36px] desktop:mb-[74px]">
-          <span className="font-thin">{contacts.mainTitle.first}</span>{" "}
+          <span className="font-thin">{contacts.mainTitle.first}</span>{' '}
           <span className="font-medium">{contacts.mainTitle.second}</span>
         </h2>
 
